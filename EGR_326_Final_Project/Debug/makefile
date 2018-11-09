@@ -123,35 +123,35 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXE_OUTPUTS += \
-EGR_326_LCD_Menu_Test.out \
+EGR_326_Final_Project.out \
 
 EXE_OUTPUTS__QUOTED += \
-"EGR_326_LCD_Menu_Test.out" \
+"EGR_326_Final_Project.out" \
 
 BIN_OUTPUTS += \
-EGR_326_LCD_Menu_Test.bin \
+EGR_326_Final_Project.bin \
 
 BIN_OUTPUTS__QUOTED += \
-"EGR_326_LCD_Menu_Test.bin" \
+"EGR_326_Final_Project.bin" \
 
 
 # All Target
 all: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
-	@$(MAKE) --no-print-directory -Onone "EGR_326_LCD_Menu_Test.out"
+	@$(MAKE) --no-print-directory -Onone "EGR_326_Final_Project.out"
 
 # Tool invocations
-EGR_326_LCD_Menu_Test.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
+EGR_326_Final_Project.out: $(OBJS) $(CMD_SRCS) $(LIB_SRCS) $(GEN_CMDS)
 	@echo 'Building target: "$@"'
 	@echo 'Invoking: ARM Linker'
-	"/Applications/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.2.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number -z -m"EGR_326_LCD_Menu_Test.map" --stack_size=512 -i"/Applications/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.2.LTS/lib" -i"/Applications/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.2.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="EGR_326_LCD_Menu_Test_linkInfo.xml" --rom_model -o "EGR_326_LCD_Menu_Test.out" $(ORDERED_OBJS)
+	"/Applications/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.2.LTS/bin/armcl" -mv7M4 --code_state=16 --float_support=FPv4SPD16 -me --advice:power=all --define=__MSP432P401R__ --define=TARGET_IS_MSP432P4XX --define=ccs -g --gcc --diag_warning=225 --diag_wrap=off --display_error_number -z -m"EGR_326_Final_Project.map" --stack_size=512 -i"/Applications/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.2.LTS/lib" -i"/Applications/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.2.LTS/include" --reread_libs --diag_wrap=off --display_error_number --warn_sections --xml_link_info="EGR_326_Final_Project_linkInfo.xml" --rom_model -o "EGR_326_Final_Project.out" $(ORDERED_OBJS)
 	@echo 'Finished building target: "$@"'
 	@echo ' '
 	@$(MAKE) --no-print-directory post-build
 
-EGR_326_LCD_Menu_Test.bin: $(EXE_OUTPUTS)
+EGR_326_Final_Project.bin: $(EXE_OUTPUTS)
 	@echo 'Building files: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo 'Invoking: ARM Hex Utility'
-	"/Applications/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.2.LTS/bin/armhex"  -o "EGR_326_LCD_Menu_Test.bin" $(EXE_OUTPUTS__QUOTED)
+	"/Applications/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.2.LTS/bin/armhex"  -o "EGR_326_Final_Project.bin" $(EXE_OUTPUTS__QUOTED)
 	@echo 'Finished building: $(strip $(EXE_OUTPUTS__QUOTED))'
 	@echo ' '
 	@$(MAKE) --no-print-directory post-build
@@ -165,7 +165,7 @@ clean:
 	-@echo ' '
 
 post-build:
-	-/Applications/ti/ccsv8/utils/tiobj2bin/tiobj2bin EGR_326_LCD_Menu_Test.out EGR_326_LCD_Menu_Test.bin /Applications/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.2.LTS/bin/armofd /Applications/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.2.LTS/bin/armhex /Applications/ti/ccsv8/utils/tiobj2bin/mkhex4bin
+	-/Applications/ti/ccsv8/utils/tiobj2bin/tiobj2bin EGR_326_Final_Project.out EGR_326_Final_Project.bin /Applications/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.2.LTS/bin/armofd /Applications/ti/ccsv8/tools/compiler/ti-cgt-arm_18.1.2.LTS/bin/armhex /Applications/ti/ccsv8/utils/tiobj2bin/mkhex4bin
 	-@echo ' '
 
 .PHONY: all clean dependents
